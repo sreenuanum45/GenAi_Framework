@@ -1,0 +1,33 @@
+<?xml version=1.0 encoding=UTF-8?>
+<!DOCTYPE suite SYSTEM http://testng.org/testng-1.0.dtd">
+<suite name="AI_TestSuite_20250621_230242" parallel="tests" thread-count="3" verbose="2">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="environment" value="qa"/>
+    <parameter name="headless" value="false"/>
+    <listeners>
+        <listener class-name="reporting.ExtentReportManager"/>
+        <listener class-name="reporting.AllureReportManager"/>
+    </listeners>
+    <test name="Smoke Tests" parallel="methods" thread-count="2">
+        <parameter name="testType" value="smoke"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="runners.TestRunner_20250621_230242"/>
+        </classes>
+    </test>
+    <test name="Regression Tests" parallel="methods" thread-count="3">
+        <parameter name="testType" value="regression"/>
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="runners.TestRunner_20250621_230242"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>standard</theme>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+        <documentTitle>AI Automation Test Report</documentTitle>
+        <reportName>Codeless Automation Framework</reportName>
+        <timelineEnabled>true</timelineEnabled>
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+                    $('#test-view-charts').prepend('<div class="card-panel"><h5>AI-Generated Tests</h5><p>This report contains automatically generated test cases from natural language prompts.</p></div>');
+                });
+            ]]>
+        </scripts>
+        <styles>
+            <![CDATA[
+                .brand-logo { background-color: #1976d2; }
+                .card-panel { margin: 20px 0; padding: 20px; }
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>
