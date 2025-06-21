@@ -1,5 +1,7 @@
-// 1. ConfigManager.java
-package com.ai.automation.core;
+package core;// 1. ConfigManager.java
+
+
+import utils.EncryptionUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +24,7 @@ public class ConfigManager {
     }
 
     public static String getGroqApiKey() {
-        return properties.getProperty("groq.api.key");
+        return EncryptionUtil.decryptKey(properties.getProperty("groq.api.key"));
     }
 
     public static String getGroqApiUrl() {
